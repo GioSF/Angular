@@ -1,0 +1,18 @@
+<!-- Utilizar uma directive [()]. É preciso ter o FormsModule no array imports
+Ele vai ligar ao input event e update o valor de serverName no nosso componente automaticamente. Por outro lado, isso irá update o valor no elemento input se nós alterarmos o valor de serverName em algum outro lugar do código.
+
+O primeiro input utiliza dataBinding simples chamando o método inputServerName. O segundo utiliza two-way dataBinding com FormsModule do ngModel
+ -->
+<p>
+  server works!
+</p>
+
+<input type="text" class="form-control" 
+(input)="inputServerName($event)">
+
+<input type="text" class="form-control" 
+[(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+
+<button class="btn btn-primary" (click)="onServerStatus()" (disabled)="buttonServerStatus">ChangeStatus</button>
+<p>{{ serverStatus }}</p>

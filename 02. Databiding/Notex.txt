@@ -1,0 +1,30 @@
+Section2, Lecture 22
+What is databinding
+
+Databiding = communication
+
+TS Code + Logic 
+-> 
+Outputs
+String Interpolation {{ data }}
+Property Binding [property] = "data"
+-> 
+Template (HTML)
+The thing in which the user interacts
+
+OR
+
+Template (HTML)
+->
+React to User Events
+->
+TSCode + Logic
+
+OR
+
+TS Code + Logic
+<->
+Two-Way-Binding [(NgModel)] = "data"
+<->
+Template (HTML)
+

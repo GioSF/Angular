@@ -1,0 +1,11 @@
+<p>
+  features works!
+</p>
+<input type="text" class="form-control" (input)="onUpdateFeatures($event)">
+<h3>{{ featuresName }}</h3>
+
+<button class="btn btn-primary" (click)="onAllowWrite()">Habilitar escrita</button>
+
+<input type="text" [disabled]="!allowWriteStatus" class="form-control" (input)="onUpdateTwo($event)">
+<h2>{{ updateTwo }}</h2>
+

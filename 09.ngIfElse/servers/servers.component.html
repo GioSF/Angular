@@ -1,0 +1,24 @@
+<label>Servers</label>
+
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
+<button class="btn btn-primary" (click)="onCreateServer()">Adicionar server</button>
+
+<!-- <p>[innerText]="allowNewServer"</p>
+<p>{{ serverCreationStatus }}</p> -->
+<!-- 
+O *ngIf é (uma info para o Angular) importante pois ele é uma structural directive que altera a estrutura do DOM adicionando ou não um elemento
+Entre "" aspas de haver uma expressão que retorna true ou false
+
+Bind ngIf com serverCreated -->
+
+<p *ngIf="serverCreated; else noServer">Server was created. Server name is {{serverName}}
+</p>
+
+<!-- ng-template: directive by angular para marcar lugares no DOM
+     #local reference cria um ponto no template o qual queremos mostrar condicionalmente
+ -->
+
+ <ng-template #noServer>
+     <p>No server was created.</p>
+ </ng-template>

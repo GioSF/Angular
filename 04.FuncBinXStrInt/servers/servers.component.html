@@ -1,0 +1,24 @@
+<!-- [] indica que estamos usando property binding e que queremos dinamicamente bind alguma propriedade e desabilitar o atributo HTML 
+O HTML só indica uma propriedade específica  no underlying DOM element.
+Cada elemento html é parsed pelo browser e "traduzido" em um elemento no DOM.
+Então temos um elemento nesse DOM que tem algumas propriedades, entre elas DISABLED. Diversas propriedades não podem ser alteradas atraves de atributos HTML.
+É possível fazer binding a um monte de elementos html
+Angular permite mudanças no DOM em tempo de execução
+Não misturar String Interpoation e Property Binding
+A sintaxe [disabled]="allowNewServer" é reconhecida pelo Angular. a parte entre aspas deve conter código typeScript. Mistuar String Interpolation aqui quebra  o aplicativo.
+String interpolation só funciona dentro de um template normal
+String interpolation não funciona dentro de outra expressão daqele template como property binding entre outros.
+
+-->
+
+<!-- Property binding-->
+<button class="btn btn-primary" [disabled]="allowNewServer">Add Server</button>
+<p>{{ allowNewServer }}</p>
+
+<!-- String Interpolation-->
+<p [innerText]="allowNewServer"></p>
+
+<p>
+    {{'server'}} {{ serversId }} is {{ serversStatus }}
+  </p>
+  

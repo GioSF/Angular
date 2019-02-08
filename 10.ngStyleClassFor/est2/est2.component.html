@@ -1,0 +1,33 @@
+<p>Socket manager</p>
+
+<input type="text" class="form-control" [(ngModel)]="socketId">
+
+<button 
+class="btn btn-primary"
+(click)="onCreateSocket()">Add socket</button>
+
+<button 
+class="btn btn-primary"
+(click)="onDeleteSocket()">Delete socket</button>
+
+<!--
+  Condição else
+  Mostrar o parágrafo apenas se nao foi criado (false)
+# local reference (marker) com um nome: noServer
+ng-template é um componente directive shipped com Angular que pode usar lugares marked no DOM
+Podemor marcar um certo ponto no template que nós queremos mostrar condicionalmente. Para mostrar condicionalemnte com else noServer 
+-->
+
+<ng-template #noServer>
+    <p>
+        Nenhum server foi criado.
+    </p>
+</ng-template>
+
+<p *ngIf="socketCreated; else noServer">socket was created with id {{socketId}}</p>
+
+<table>
+
+  <app-est1 *ngFor="let socket of socketList"></app-est1>
+
+</table>

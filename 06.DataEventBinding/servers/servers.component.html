@@ -1,0 +1,35 @@
+<!-- [] indica que estamos usando property binding e que queremos dinamicamente bind alguma propriedade e desabilitar o atributo HTML 
+O HTML só indica uma propriedade específica  no underlying DOM element.
+Cada elemento html é parsed pelo browser e "traduzido" em um elemento no DOM.
+Então temos um elemento nesse DOM que tem algumas propriedades, entre elas DISABLED. Diversas propriedades não podem ser alteradas atraves de atributos HTML.
+É possível fazer binding a um monte de elementos html
+Angular permite mudanças no DOM em tempo de execução
+Não misturar String Interpoation e Property Binding
+A sintaxe [disabled]="allowNewServer" é reconhecida pelo Angular. a parte entre aspas deve conter código typeScript. Mistuar String Interpolation aqui quebra  o aplicativo.
+String interpolation só funciona dentro de um template normal
+String interpolation não funciona dentro de outra expressão daqele template como property binding entre outros.
+
+Property binding
+Para reagir a um evento, HTML utiliza onclick=... Angular utiliza (click) + o método que será chamado.
+  No click não é necessário colocar um método. é posível escrever código aqui. Não é boa prática executar muita coisa no template. Apenas setar um booleano como true ou false, por exemplo
+ -->
+
+<label>Server Name</label>
+<!-- $event é nosso nome de variável reservada. Pode usar no template ao se usar event binding. eventos com $ serão o dado emitido com aquele evento. Input e click são eventos default do DOM. e fornecem aguma informação sobre o clique. $events também dão informações e podemos capturar essa informaão com $event como argumento do método que chamamos -->
+
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+
+<p>{{ serverName }}</p>
+
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<p>{{ allowNewServer }}</p>
+
+<!-- String Interpolation
+<p [innerText]="allowNewServer"></p>
+ -->
+
+<p>{{ serverCreatorStatus }}</p>
+
+<p>
+  {{'server'}} {{ serversId }} is {{ serversStatus }}
+</p>

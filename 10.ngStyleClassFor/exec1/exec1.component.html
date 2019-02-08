@@ -1,0 +1,6 @@
+<!-- ngClass para alteração da classeCSS -->
+
+<p 
+[ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: userStatus === true}"
+ >O usuário {{ userId }} está {{ (userStatus  === true ? 'online' : 'offline')  }} ouvindo o track {{ trackNumber }}.</p>

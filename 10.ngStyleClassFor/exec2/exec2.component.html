@@ -1,0 +1,29 @@
+<label>Server Name</label>
+
+<input
+type="text"
+class="form-control"
+[(ngModel)]="serverName">
+
+<button
+class="btn btn-primary"
+(click)="onCreateServer()">Add server</button>
+
+<!-- *ngIf="serverCreated" é uma diretiva. O * pq é ngIf é uma diretiva estrutural, muda a estrutura do DOM. Tem ter uma expressão que retorna true ou false.
+1) O botão triggered em onCreateServer
+2) A função muda serverCreated para true
+-->
+ 
+<p *ngIf="serverCreated; else noServer">Server foi criado com o nome {{ serverName }}</p>
+<!-- Mostrar o próximo parágrafo apenas se nao foi criado (false)
+# local reference (marker) com um nome
+ng-template é um componente directive shipped com Angular que pode usar lugares marked no DOM
+Podemor marcar um certo ponto no template que nós queremos mostrar condicionalmente. Para mostrar condicionalemnte com else noServer 
+-->
+<ng-template #noServer>
+    <p>
+        Nenhum server foi criado.
+    </p>
+</ng-template>
+
+<app-exec1 *ngFor="let server of servers"></app-exec1>

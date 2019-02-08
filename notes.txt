@@ -1,0 +1,5 @@
+Angluar é um framework JS que altera seu DOM (html) em tempo de execução
+Components são a chave do angular. Toda a aplicação é construída com alguns componentes que serão criados do seu jeito.
+Existe o root component que vai conter todos os outros componentes que forma seu app: um header, caixa principal, lateral, etc.
+Cada componente tem seu próprio template e seu próprio business logic. é possível dividir uma app complexo em partes reusáveis.
+Construir finely controlled pieces em seu app sem ter que colocar tudo em um único arquivo script ou html

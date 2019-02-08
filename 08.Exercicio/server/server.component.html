@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+            <p>The Server Component</p>
+
+            <input type="text" class="form-control" (input)="inputText($event)" [(ngModel)]="username">
+
+            <p>{{ username }}</p>
+            <!-- Me -->
+            <button class="btn btn-primary" (click)="clearInput()" [disabled]="buttonStatus">Reset</button>
+            <!-- Maximillian's exemple. Será que é legal hard code na view? Não é renderizado no DOM, mas de qualquer forma.-->
+            <button class="btn btn-primary" (click)="username = ''" [disabled]="username === ''">Reset</button>
+
+        </div>
+    </div>
+</div>

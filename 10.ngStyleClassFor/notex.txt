@@ -1,0 +1,27 @@
+Directives são instruções no DOM
+
+Components são um tipo de instrução no DOM. Quando coloca o 'selector' de um component em algum lugar nos templates, isso instrui Angular a adicionar o conteúdo do component (component template + business logic + types com código x'neste lugar onde usamos o 'selector'.
+
+e de fato, components são directives mas directives com um template.
+Também existem directives sem template
+
+Exemplo: directive appTurnGreen que pode ser um directive customizado que podemos construir. Geralmente adicionamos directives com o attributes selector mas tecnicamente o selector de uma diretiva pode ser configurado como o selector de um componente
+
+<p appTurnGreen>Qualquer texto</p>
+
+Angular procura a instrução appTurnGrenn na diretiva onde ele foi definida com o directive decorator para informar ao Angular que esta classe contém uma diretiva. Então é possível ter a lógica para tranformar a cor.
+@Directive({
+    selector: 'appTurnGreen'
+})
+export class TurnGreenDirective{
+    lógica
+}
+
+Aprender a escrever nossas próprias directives na sessão focada em directives mas há algumas built-in directives que não muito úteis
+
+sec 2 lec 25
+
+Diferentemente de structural directives, attributive directives não adicionam ou removem elementos. Eles apenas mudam o elemento no qual são colocados.
+
+*ngIf else: structural directive
+appTurnGreen: attributive directive

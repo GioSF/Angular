@@ -1,0 +1,9 @@
+<tr
+[ngStyle]="{backgroundColor: getStatusColor()}"
+[ngClass]="{online: userStatus === true}"
+>User {{ userId }} is {{ (userStatus === true ? 'online' : 'offline') }} listening to track {{ userSong }}.</tr>
+
+<!-- 
+    [ngClass]="{online: userStatus === true}"
+Só será aplicada a classe css online se userStatus for true.
+ -->
