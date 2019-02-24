@@ -1,0 +1,15 @@
+<button (click)="ddAction()">Display details</button>
+
+<p
+*ngIf="displayDetail === true"
+>Segredo!</p>
+
+<div 
+*ngFor="let logItem of log; let i = index"
+[ngStyle]="{backgroundColor: i >= 5 ? 'yellow' : 'transparent'}"
+[ngClass]="{'view': i >= 5}"
+>{{ logItem }}</div> 
+
+<!--
+    No ngClass: Property binding com {} pq eu preciso passar um objeto javascript (entre '') para a propriedade ngClass na diretiva ngClass pq essa diretiva precisa saber qual classe está ligada a ela.
+ -->

@@ -3,3 +3,13 @@ Components são a chave do angular. Toda a aplicação é construída com alguns
 Existe o root component que vai conter todos os outros componentes que forma seu app: um header, caixa principal, lateral, etc.
 Cada componente tem seu próprio template e seu próprio business logic. é possível dividir uma app complexo em partes reusáveis.
 Construir finely controlled pieces em seu app sem ter que colocar tudo em um único arquivo script ou html
+
+Sec3 Less 40
+O primeiro passo ao criar um app em Angular é desenhar a estrutura do app e pensar quais componentes vamos precisar para as diferentes features do app.
+Pode decidir unir dois componentes que foram pensados separados.
+Cada componente pode focar em um tópico (mostrar uma lista, informações sobre um item, detalhes sobre um item selecionado, etc).
+
+Model:
+-Data: definir tipos próprios, objetos e ter uma clara  interface e uma definicção de como seus dados aparecem.Isso facilita como os componentes irão conversar entre si.
+-Ingredient
+-Recipe
