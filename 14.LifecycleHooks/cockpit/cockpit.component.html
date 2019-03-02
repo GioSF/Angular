@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints!</p>
+    <label>Server Name</label>
+<!--     Input contém agora reference #serverNameInput.
+    Só pode ser utilizado no teplate. Não no ts
+ -->
+    <input
+    type="text"
+    class="form-control"
+    #serverNameInput>
+    <label>Server Content</label>
+<!--     <input 
+    type="text" 
+    class="form-control" 
+    [(ngModel)]="newServerContent">
+    <br> -->
+    <input 
+    type="text" 
+    class="form-control" 
+    #newContentInput>
+    <br>
+<!--     #serverNameInput (no primeiro input) é passado como argumento de função nos botões.
+    O botão não passa o #newContentInput (do segundo input) pois está sendo fetch diretamente no ts via @ViewChild -->
+    <button
+      class="btn btn-primary"
+      (click)="onAddServer(serverNameInput)">Add Server</button>
+    <button
+      class="btn btn-primary"
+      (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
+  </div>
+</div>

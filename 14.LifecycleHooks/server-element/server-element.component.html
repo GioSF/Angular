@@ -1,0 +1,17 @@
+<!-- Tudo isso será eviado para o DOM de app.component. Em especial, a diretiva ng-content vai funcionar como um gancho de que define o onde será renderizado o que está entre o >< da tag app-server-element  -->
+
+<div class="panel panel-default">
+<!--   <div class="panel-heading">{{ element.name }}</div> -->
+  <div class="panel-heading" #heading>{{ name }}</div>
+  <div class="panel-body">
+<!--     o ng-content pode ser útil para uso com tabs onde cada tab possui um conteúdo que vem de outro lugar mas não se quer usar dataBinding -->
+
+    <ng-content></ng-content>
+    <!--   
+  <p>
+    <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+    <em *ngIf="element.type === 'blueprint'" style="color: blue">{{ element.content }}</em>
+  </p>
+ -->
+  </div>
+</div>

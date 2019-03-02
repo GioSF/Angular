@@ -1,0 +1,28 @@
+<div class="container">
+  <!--     Aqui escutaremos o evento serverCreated ou bluprintCreated (quando for clicado). Chamamos onServerAdded que passa um evento event que passa dados. Assim, o onServerAdded precisa estar apto a receber um tipo de objeto que espera receber nesse método dados que serão push dentro do array serverElement.
+
+  É possivel fundir esses dois métodos. Eles foram separados apenas para entendimento.
+
+  Estamos esperando eventos chamados serverCreated e blueprintCreated
+ -->
+
+  <app-cockpit (serverCreated)="onServerAdded($event)" (hewuoin0239fiewovn3902wfejoipdv)="onBlueprintAdded($event)"></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
+      <button class="btn btn-danger" (click)="ngOnDestroyFirst()">Destroy first element</button>
+      <app-server-element
+      *ngFor="let serverElement of serverElements"
+      [srvElement]="serverElement"
+      [name]="serverElement.name"      
+      >
+
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'" style="color: blue">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>
