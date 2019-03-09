@@ -2,16 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { EvenComponent } from './even/even.component';
+import { GameControllerComponent } from './game-controller/game-controller.component';
 import { OddComponent } from './odd/odd.component';
-import { ControllerComponent } from './controller/controller.component';
+import { EvenComponent } from './even/even.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EvenComponent,
+    GameControllerComponent,
     OddComponent,
-    ControllerComponent
+    EvenComponent
   ],
   imports: [
     BrowserModule

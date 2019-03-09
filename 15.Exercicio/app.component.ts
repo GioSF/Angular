@@ -1,37 +1,28 @@
-import { Component, EventEmitter, Output, NgModule } from '@angular/core';
-import { EvenComponent } from '../app/even/even.component';
-import { OddComponent } from '../app/odd/odd.component'
-import { ControllerComponent } from '../app/controller/controller.component'
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    EvenComponent,
-    OddComponent,
-    ControllerComponent
-  ]
-})
-
 export class AppComponent {
-  title = 'game';
+  title = 'game2';
 
-  oddNumbers: number[] = [];
-  evenNumbers: number[] = [];
+  @Output() listaPar: number[] = [];
+  @Output() listaImpar: number[] = [];
 
-  onIntervalFired(firedNumber: number){
-    if(firedNumber%2 == 0){
-      this.evenNumbers.push(firedNumber)
-    }else{
-      this.oddNumbers.push(firedNumber);
+  acaoNumero(contador: number) {
+
+    if (contador % 2 == 0) {
+      this.listaPar.push(contador)
+      console.log(contador)
+      console.log(this.listaPar.toString())
+    } else {
+      this.listaImpar.push(contador)
+      console.log(contador)
+      console.log(this.listaImpar.toString())
     }
   }
+
 
 }
